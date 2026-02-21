@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -61,8 +63,12 @@ dependencies {
     // Gson
     implementation("com.google.code.gson:gson:2.10.1")
 
-    // Coil for image loading (opcional, para futuras mejoras)
-    implementation("io.coil-kt:coil-compose:2.5.0")
+
+
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

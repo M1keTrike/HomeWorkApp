@@ -18,18 +18,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.homeworkapp.features.homework.presentation.components.TaskCard
 import com.homeworkapp.features.homework.presentation.viewmodel.TaskViewModel
-import com.homeworkapp.features.homework.presentation.viewmodel.TaskViewModelFactory
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskScreen(
-    factory: TaskViewModelFactory
+    viewModel: TaskViewModel = hiltViewModel()
 ) {
-    val viewModel: TaskViewModel = viewModel(factory = factory)
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Scaffold(
@@ -81,4 +79,3 @@ fun TaskScreen(
         }
     }
 }
-

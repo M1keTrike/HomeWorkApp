@@ -4,12 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.homeworkapp.features.homework.domain.usecases.GetTasksUseCase
 import com.homeworkapp.features.homework.presentation.screens.TaskUiState
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.delay
+import javax.inject.Inject
 
-class TaskViewModel(
+@HiltViewModel
+class TaskViewModel @Inject constructor(
     private val getTasksUseCase: GetTasksUseCase
 ) : ViewModel() {
 

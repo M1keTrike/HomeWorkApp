@@ -2,8 +2,9 @@ package com.homeworkapp.features.homework.domain.usecases
 
 import com.homeworkapp.features.homework.domain.entities.Task
 import com.homeworkapp.features.homework.domain.repositories.TaskRepository
+import javax.inject.Inject
 
-class GetTasksUseCase(
+class GetTasksUseCase @Inject constructor(
     private val repository: TaskRepository
 ) {
 

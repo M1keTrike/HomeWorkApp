@@ -4,8 +4,9 @@ import com.homeworkapp.core.network.HomeworkApi
 import com.homeworkapp.features.homework.data.datasources.remote.mapper.toDomain
 import com.homeworkapp.features.homework.domain.entities.Task
 import com.homeworkapp.features.homework.domain.repositories.TaskRepository
+import javax.inject.Inject
 
-class TaskRepositoryImpl(
+class TaskRepositoryImpl @Inject constructor(
     private val api: HomeworkApi
 ) : TaskRepository {
 
